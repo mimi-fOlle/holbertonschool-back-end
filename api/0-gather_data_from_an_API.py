@@ -16,15 +16,15 @@ if __name__ == "__main__":
     data2 = response2.json()
 
     for i in data2:
-        if i.get("id") == int(argv[1]):
-            employee = i.get("name")
+        if i.get('id') == int(argv[1]):
+            employee = i.get('name')
 
     for i in data1:
-        if i.get("userId") == int(argv[1]):
+        if i.get('userId') == int(argv[1]):
             total += 1
-            if i.get("completed") is True:
+            if i.get('completed') is True:
                 completed += 1
-                tasks.append(i.get("title"))
+                tasks.append(i.get('title'))
 #            else:
 #                uncompleted += 1
 #        total = completed + uncompleted
