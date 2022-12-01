@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Returns info about his/her TODO list progress by giving employee ID"""
-import json
 from requests import get
 from sys import argv
 
