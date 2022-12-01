@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Returns info about his/her TODO list progress by giving employee ID"""
-from sys import argv
 import json
 import requests
+from sys import argv
 
 
 if __name__ == "__main__":
