@@ -1,18 +1,18 @@
 #!/usr/bin/python3
 """Returns info about his/her TODO list progress by giving employee ID"""
 import json
-import requests
+from requests import get
 from sys import argv
 
 
 if __name__ == "__main__":
-    response1 = requests.get('https://jsonplaceholder.typicode.com/todos/')
+    response1 = get('https://jsonplaceholder.typicode.com/todos/')
     data1 = response1.json()
     completed = 0
     uncompleted = 0
     total = 0
     tasks = []
-    response2 = requests.get('https://jsonplaceholder.typicode.com/users/')
+    response2 = get('https://jsonplaceholder.typicode.com/users/')
     data2 = response2.json()
 
     for idx in data2:
