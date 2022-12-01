@@ -5,8 +5,8 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    response1 = get('https://jsonplaceholder.typicode.com/todos/')
-    data1 = response1.json()
+    response = get('https://jsonplaceholder.typicode.com/todos/')
+    data = response.json()
     completed = 0
 #    uncompleted = 0
     total = 0
@@ -18,7 +18,7 @@ if __name__ == "__main__":
         if i.get('id') == int(argv[1]):
             employee = i.get('name')
 
-    for i in data1:
+    for i in data:
         if i.get('userId') == int(argv[1]):
             total += 1
             if i.get('completed') is True:
