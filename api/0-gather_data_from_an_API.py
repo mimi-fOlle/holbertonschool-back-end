@@ -29,7 +29,6 @@ if __name__ == "__main__":
                 uncompleted += 1
         total = completed + uncompleted
 
-
     print("Employee {} is done with task({}/{}):".format(employee,
                                                          completed, total))
 
