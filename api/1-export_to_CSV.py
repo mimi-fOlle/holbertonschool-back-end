@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" """
+"""Exports data in the CSV format """
 from requests import get
 from sys import argv
 import csv
@@ -8,7 +8,7 @@ import csv
 if __name__ == "__main__":
     response = get('https://jsonplaceholder.typicode.com/todos/')
     data = response.json()
-    ourdata =[]
+    ourdata = []
     response2 = get('https://jsonplaceholder.typicode.com/users/')
     data2 = response2.json()
 
@@ -16,7 +16,7 @@ if __name__ == "__main__":
         if x['id'] == int(argv[1]):
             employee = x['username']
 
-    with open(argv[1] + '.csv','w', newline='') as f:
+    with open(argv[1] + '.csv', 'w', newline='') as f:
         writ = csv.writer(f, quoting=csv.QUOTE_ALL)
 
         for x in data:
@@ -26,5 +26,4 @@ if __name__ == "__main__":
                 ourdata.append(employee)
                 ourdata.append(x['completed'])
                 ourdata.append(x['title'])
-                
                 writ.writerow(ourdata)
