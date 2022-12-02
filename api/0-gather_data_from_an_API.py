@@ -8,7 +8,6 @@ if __name__ == "__main__":
     response = get('https://jsonplaceholder.typicode.com/todos/')
     data = response.json()
     completed = 0
-    uncompleted = 0
     total = 0
     tasks = []
     response2 = get('https://jsonplaceholder.typicode.com/users/')
@@ -20,12 +19,11 @@ if __name__ == "__main__":
 
     for idx in data:
         if idx.get("userId") == int(argv[1]):
+            total += 1
+
             if idx.get("completed") is True:
                 completed += 1
                 tasks.append(idx.get("title"))
-            else:
-                uncompleted += 1
-        total = completed + uncompleted
 
     print("Employee {} is done with task({}/{}):".format(employee,
                                                          completed, total))
